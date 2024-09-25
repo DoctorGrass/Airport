@@ -1,0 +1,35 @@
+﻿<Page x:Class="AirPortApp.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+       xmlns:local="clr-namespace:AirPortApp"
+        mc:Ignorable="d"
+        Title="Page1" Height="450" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        MouseDown="Window_MouseDown">
+
+    <Grid>
+        <Button
+  Style="{StaticResource MaterialDesignPaperSecondaryButton}"
+  Width="{StaticResource ButtonWidth}"
+  ToolTip="Resource name: MaterialDesignPaperSecondaryButton"
+  Content="Это кликер, лооооол"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="262,85,262,333" />
+        <materialDesign:Badged
+  x:Name="CountingBadge"
+  BadgeColorZoneMode="PrimaryDark"/>
+        <Button
+    Style="{StaticResource MaterialDesignRaisedLightButton}"
+    Click="CountingButton_OnClick"
+    Content="Жми"
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" RenderTransformOrigin="3.179,6.7" Margin="280,265,276,156" />
+    </Grid>
+</Page>

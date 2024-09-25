@@ -1,0 +1,54 @@
+﻿<Window x:Class="AirPortApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AirPortApp"
+        WindowStyle="None"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        MouseDown="Window_MouseDown">
+    <Grid>
+        <Button
+  Style="{StaticResource MaterialDesignPaperLightButton}"
+  Width="{StaticResource ButtonWidth}"
+  ToolTip="Resource name: MaterialDesignPaperLightButton"
+  Content="Х"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="699,16,56,402" RenderTransformOrigin="0.893,0.24" />
+        <StackPanel>
+            <TextBox
+    Style="{StaticResource MaterialDesignFilledTextBox}"
+    TextWrapping="Wrap"
+    MaxLength="40"
+    materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+    materialDesign:HintAssist.Hint="Имя" Width="263" Margin="168, 160, 168, 160" />
+        </StackPanel>
+        <StackPanel Margin="0,10,0,-10">
+            <PasswordBox
+    Style="{StaticResource MaterialDesignFilledPasswordBox}"
+    IsEnabled="{Binding IsChecked, ElementName=MaterialDesignFilledPasswordBoxEnabledComboBox}"
+    materialDesign:HintAssist.Hint="Пароль" Width="267" Margin="168, 210, 168, 210"/>
+
+        </StackPanel>
+        <Button
+  Style="{StaticResource MaterialDesignRaisedDarkButton}"
+  Width="{StaticResource ButtonWidth}"
+  ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+  Content="Войти"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="272,298,414,120" />
+        <Button
+  Style="{StaticResource MaterialDesignPaperDarkButton}"
+  Width="{StaticResource ButtonWidth}"
+  ToolTip="Resource name: MaterialDesignPaperDarkButton"
+  Content="Покинуть чат"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="410,298,276,120" />
+    </Grid>
+</Window>
